@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/requestcreditsystem
+    username: sa
+    password: senhas
+  jpa:
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      properties:
+        hibernate:format_sql: true
+  application:
+    name: request-credit-system
+server:
+  port: 9090
