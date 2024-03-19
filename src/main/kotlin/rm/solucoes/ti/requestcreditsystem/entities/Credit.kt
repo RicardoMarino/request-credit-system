@@ -14,6 +14,6 @@ data class Credit (
         @Column(nullable = false)val numberOfInstallments: Int = 0,
         @Enumerated val status: Status = Status.IN_PROGRESS,
         @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST, CascadeType.REMOVE])
-        val customer: Customer? = null,
+        var customer: Customer? = null,
         @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) val id: Long? = null
 )
