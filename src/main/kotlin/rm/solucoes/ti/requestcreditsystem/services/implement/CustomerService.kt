@@ -2,6 +2,7 @@ package rm.solucoes.ti.requestcreditsystem.services.implement
 
 import org.springframework.stereotype.Service
 import rm.solucoes.ti.requestcreditsystem.entities.Customer
+import rm.solucoes.ti.requestcreditsystem.exceptions.BusinessException
 import rm.solucoes.ti.requestcreditsystem.repositories.ICustomerRepository
 import rm.solucoes.ti.requestcreditsystem.services.ICustomerService
 
@@ -14,7 +15,7 @@ class CustomerService(
     override fun findAll(): List<Customer> = this.customerRepository.findAll()
 
     override fun findById(id: Long): Customer = this.customerRepository.findById(id).orElseThrow{
-        throw Exception("Customer id: $id not found")
+        throw BusinessException("Customer id: $id not found")
     }
     override fun delete(id: Long) = this.customerRepository.deleteById(id)
 }
